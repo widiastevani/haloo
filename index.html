@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Romantic Book</title>
+    <style>
+      body {
+        font-family: "Arial", sans-serif;
+        text-align: center;
+        background-color: #fff9e6;
+        margin: 0;
+        padding: 0;
+      }
+
+      .book {
+        width: 80%;
+        max-width: 500px;
+        margin: 50px auto;
+        padding: 20px;
+        background-color: #fddcdc;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      }
+
+      .page {
+        display: none;
+      }
+
+      .page.active {
+        display: block;
+        animation: fadeIn 0.5s ease-in-out;
+      }
+
+      .page video {
+        width: 100%;
+        height: auto;
+        margin-top: 20px;
+        border-radius: 10px;
+      }
+      .page img {
+        width: 100%;
+        height: auto;
+        margin-top: 20px;
+        border-radius: 10px;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      .buttons {
+        margin-top: 20px;
+      }
+
+      .buttons button {
+        background-color: #ff6b6b;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        margin: 0 10px;
+        font-size: 16px;
+        border-radius: 5px;
+        cursor: pointer;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+      }
+
+      .buttons button:hover {
+        background-color: #ff4b4b;
+      }
+
+      footer {
+        margin-top: 20px;
+        font-size: 16px;
+        color: #b35c5c;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="book">
+      <!-- Front Page -->
+      <div class="page active" id="page-0">
+        <h1>alooo sayangg</h1>
+        <p>liatt ini ada pacarkuuu so cuteeee hehe🤗</p>
+      </div>
+
+      <!-- Main Pages -->
+      <div class="page" id="page-1">
+        <h2>ini pacarkuuu, ganteng sekaliii, apalagi senyumnya so cutee🫶</h2>
+        <img src="gambar1.jpg" alt="Beautiful Memory" />
+      </div>
+
+      <div class="page" id="page-2">
+        <h2>
+          inii video pas awal awall masihhh hehehe lucuu kalii, muka sayang di
+          situ ga pas ke dinonyaa
+        </h2>
+        <video controls>
+          <source src="vid2.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      </div>
+
+      <div class="page" id="page-3">
+        <h2>
+          love you sayangku cintaku pacarku yang ganteng🫶, still love you until
+          now walaupun sayang ngeselin, aku juga ngeselin sih hehe maaf yaa
+          sayang banyak salah, sayang jangan nakall, jangan malas mandi, bauuu🫢.
+          Sayang semangat kuliahnyaa biar suksess nantiii, jangan sering sering
+          sayang ngejek orang yaa😒, awas aja kalo di ejek aku krna bikin ginian
+          ya😤
+        </h2>
+      </div>
+
+      <!-- Back Page -->
+      <div class="page" id="page-4">
+        <h2>sayang daniell banyakk banyakk</h2>
+        <img src="gambar6.jpg" alt="Special Memory" />
+        <p>semangatt kuliahnyaa sayangku❤️</p>
+      </div>
+
+      <div class="buttons">
+        <button id="prev">Previous</button>
+        <button id="next">Next</button>
+      </div>
+    </div>
+
+    <footer>untuk pacarku yang ganteng dan lucu❤️</footer>
+
+    <script>
+      const pages = document.querySelectorAll(".page");
+      let currentPage = 0;
+
+      function showPage(index) {
+        pages.forEach((page, i) => {
+          page.classList.toggle("active", i === index);
+        });
+      }
+
+      document.getElementById("prev").addEventListener("click", () => {
+        if (currentPage > 0) {
+          currentPage--;
+          showPage(currentPage);
+        }
+      });
+
+      document.getElementById("next").addEventListener("click", () => {
+        if (currentPage < pages.length - 1) {
+          currentPage++;
+          showPage(currentPage);
+        }
+      });
+
+      showPage(currentPage);
+    </script>
+  </body>
+</html>
